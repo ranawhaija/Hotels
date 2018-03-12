@@ -9,7 +9,7 @@ var app = express();
 app.use(express.static('./public'));
  
 //Server listens on the port 8124
-var server =http.createServer(app).listen(8124);
+var server =http.createServer(app);
 /*initializing the websockets communication , server instance has to be sent as the argument */
 io = io.listen(server); 
  
