@@ -8,8 +8,9 @@ const superagent = require('superagent');
 var app = express();
 app.use(express.static('./public'));
  
-//Server listens on the port 8124
-var server =http.createServer(app).listen(8124);
+// process.env.PORT lets the port be set by Heroku
+var port = process.env.PORT || 8080;
+var server =http.createServer(app).listen(port);
 /*initializing the websockets communication , server instance has to be sent as the argument */
 io = io.listen(server); 
  
